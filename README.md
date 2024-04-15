@@ -1,5 +1,13 @@
 # Head Control Interface for VR Accessibility with Haptic Feedback
 
+
+### Head Tracking
+![Alt Text](https://github.com/sanskarfc/head-tracking-hci/blob/main/tracking.gif)
+
+
+### Haptic Simulation
+![Alt Text](https://github.com/sanskarfc/head-tracking-hci/blob/main/haptic.gif)
+
 ## Introduction
 
 The Head Control Interface (HCI) for VR Accessibility is a software project aimed at improving accessibility for individuals with disabilities, particularly in virtual reality (VR) environments. This project utilizes head tracking, facial gesture recognition, and haptic feedback to provide an intuitive interface for controlling VR applications, aiding communication, and enhancing experiences in social, professional, and academic settings. Additionally, the haptic feature enables effective physiotherapy by providing selective haptic inputs to healthcare professionals, allowing them to assess patients' performance using analytics.
