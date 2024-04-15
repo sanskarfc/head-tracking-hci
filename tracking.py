@@ -17,7 +17,7 @@ screen_width, screen_height = pyautogui.size()
 def map_position(x, y):
     # Map the position to the screen size
     mapped_x = int((x / screen_width) * 1920)
-    mapped_y = int((y / screen_height) * 1080)
+    mapped_y = screen_height - int((y / screen_height) * 1080)  # Invert the y-coordinate
     
     # Move the mouse
     pyautogui.moveTo(mapped_x, mapped_y)
