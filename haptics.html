@@ -4,16 +4,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Haptic Button</title>
+  <title>VR Homepage</title>
   <style>
+    body {
+      background-color: #1a1a1a;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 50px;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 30px;
+    }
+
+    .icon-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 50px;
+    }
+
     .icon {
-      display: inline-block;
-      width: 60px;
-      height: 60px;
-      margin: 10px;
-      background-color: #ccc;
-      border-radius: 15px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      width: 80px;
+      height: 80px;
+      margin: 0 20px;
+      background-color: #333;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 40px;
       transition: transform 0.2s;
     }
 
@@ -50,10 +72,14 @@
 </head>
 
 <body>
-  <div class="icon"></div>
-  <div class="icon"></div>
-  <div class="icon"></div>
-  <div class="icon"></div>
+  <h1>Welcome to VR World</h1>
+
+  <div class="icon-container">
+    <div class="icon">🕶️</div>
+    <div class="icon">🎮</div>
+    <div class="icon">🎥</div>
+    <div class="icon">🎚️</div>
+  </div>
 
   <script>
     const icons = document.querySelectorAll('.icon');
