@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Haptic Button</title>
+  <style>
+    .icon {
+      display: inline-block;
+      width: 60px;
+      height: 60px;
+      margin: 10px;
+      background-color: #ccc;
+      border-radius: 15px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s;
+    }
+
+    .icon:hover {
+      animation: vibrate 0.2s infinite;
+    }
+
+    @keyframes vibrate {
+      0% {
+        transform: translate(0);
+      }
+
+      20% {
+        transform: translate(-2px, 2px);
+      }
+
+      40% {
+        transform: translate(-2px, -2px);
+      }
+
+      60% {
+        transform: translate(2px, 2px);
+      }
+
+      80% {
+        transform: translate(2px, -2px);
+      }
+
+      100% {
+        transform: translate(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="icon"></div>
+  <div class="icon"></div>
+  <div class="icon"></div>
+  <div class="icon"></div>
+
+  <script>
+    const icons = document.querySelectorAll('.icon');
+
+    icons.forEach(icon => {
+      icon.addEventListener('mouseenter', () => {
+        icon.style.cursor = 'pointer';
+      });
+
+      icon.addEventListener('mouseleave', () => {
+        icon.style.cursor = 'default';
+      });
+    });
+  </script>
+</body>
+
+</html>
