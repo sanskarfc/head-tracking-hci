@@ -2,6 +2,8 @@ import cv2
 import dlib
 import pyautogui
 import math
+import time 
+import random
 
 # Initialize dlib's face detector and the facial landmark predictor
 detector = dlib.get_frontal_face_detector()
@@ -14,10 +16,17 @@ cap = cv2.VideoCapture(0)
 screen_width, screen_height = pyautogui.size()
 
 # Define a function to map the position of the head to mouse movement
-def map_position(x, y):
+def map_position(x, y, delay=0.05, max_offset=10):
     # Map the position to the screen size
     mapped_x = int((x / screen_width) * 1920)
     mapped_y = screen_height - int((y / screen_height) * 1080)  # Invert the y-coordinate
+    
+    # Introduce a small delay
+    time.sleep(delay)
+    
+    # Add some randomness to cursor movement
+    mapped_x += random.randint(-max_offset, max_offset)
+    mapped_y += random.randint(-max_offset, max_offset)
     
     # Move the mouse
     pyautogui.moveTo(mapped_x, mapped_y)
@@ -41,7 +50,13 @@ def get_head_tilt_angle(landmarks):
     return angle
 
 # Define a function to detect head nods
-def is_head_nod(angle, threshold=0.3):
+def is_head_nod(angle, base_threshold=0.3, max_offset=0.1, delay=0.2):
+    # Introduce a delay before checking for head nods
+    time.sleep(delay)
+    
+    # Add some randomness to the threshold value
+    threshold = base_threshold + random.uniform(-max_offset, max_offset)
+    
     if angle > threshold:
         return True
     return False
